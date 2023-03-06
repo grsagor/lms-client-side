@@ -1,0 +1,68 @@
+:root {
+    --orange: #FF2D20;
+    --white: #ffffff;
+    --second-color: #090910;
+    --gray-color: #F9F9F9;
+
+    --navbar-active-bg: #FF2D20;
+}
+
+.orange-bg {
+    background-color: var(--orange);
+}
+
+.gray-bg {
+    background-color: #F9F9F9;
+}
+
+.white-bg {
+    background-color: var(--white);
+    color: #090910;
+}
+
+.orange-text {
+    color: var(--orange);
+}
+
+.white-text {
+    color: var(--white);
+}
+
+.secondary-text {
+    color: var(--second-color);
+}
+
+/* Making footer bottom for less content start */
+.full-body {
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    background-color: var(--white) !important;
+}
+
+.outlet-body {
+    flex:1;
+}
+/* Making footer bottom for less content end */
+
+
+/* Navbar Start */
+
+.navbar {
+    background-color: var(--white);
+    color: var(--orange);
+    padding: 0 .5rem;
+}
+
+.navbar Link:active:hover{
+    background-color: var(--orange);
+}
+
+
+/* Navbar End */
+
+.footer-bottom {
+    background-color: var(--orange);
+    height: 50px;
+}
