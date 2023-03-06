@@ -2,7 +2,7 @@ import React from 'react';
 
 const Login = () => {
     return (
-        <div>
+        <div className='white-bg'>
             This is login
         </div>
     );
