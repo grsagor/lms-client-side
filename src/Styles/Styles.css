@@ -23,6 +23,9 @@
 .orange-text {
     color: var(--orange);
 }
+.button-border {
+    border: 1px solid #FF2D20;
+}
 
 .white-text {
     color: var(--white);
@@ -66,3 +69,10 @@
     background-color: var(--orange);
     height: 50px;
 }
+
+.input{
+    
+    border-bottom: 2px solid gray;
+}
+
+
