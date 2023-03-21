@@ -37,7 +37,7 @@ const Login = () => {
             <input className='btn text-white orange-bg border-none my-5' value='Login' type="submit" />
           </form>
 
-          <p className='text-center'>New to the website,please <Link className='font-semibold' to='/register'>Register</Link>.</p>
+          <p className='text-center'>New to the website,please <Link className='font-semibold orange-text' to='/register'>Register</Link>.</p>
 <div className='p-8'>
 <button className='btn orange-text white-bg button-border text-secondary w-full y-4'>Continue With Google</button>
 

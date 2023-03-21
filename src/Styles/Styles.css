@@ -3,7 +3,6 @@
     --white: #ffffff;
     --second-color: #090910;
     --gray-color: #F9F9F9;
-
     --navbar-active-bg: #FF2D20;
 }
 
@@ -12,19 +11,19 @@
 }
 
 .gray-bg {
-    background-color: #F9F9F9;
+    background-color: var(--gray-color);
 }
 
 .white-bg {
     background-color: var(--white);
-    color: #090910;
+    color: var(--second-color);
 }
 
 .orange-text {
     color: var(--orange);
 }
 .button-border {
-    border: 1px solid #FF2D20;
+    border: 1px solid var(--orange);
 }
 
 .white-text {
