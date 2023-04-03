@@ -1,21 +1,50 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import UseTittle from '../../Hooks/UseTittle';
 import '../../Styles/Styles.css'
 import img1 from '../Login/images/img1.png';
 import img2 from '../Login/images/img2.png';
+import { AuthContext } from '../../Context/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 
 const Login = () => {
   UseTittle('Login');
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
+  const {LogIn,googleLogIn} = useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider();
+
+
+  const handleLogin=data=>{
+    LogIn(data.email,data.password)
+    .then(result =>{
+        const user = result.user;
+        console.log(user);
+        console.log('login')
+    })
+    .catch(error =>{
+        console.log(error)
+    });
+  }
+    const handleGoogleLogIn = () => {
+      googleLogIn(googleProvider)
+      .then(result => {
+              const user = result.user;
+              console.log(user);
+          })
+          .catch(error => {
+              console.error(error);
+          })
+    }
+  
+
   return (
     <div className="hero p-5 bg-base-100">
       <div className="hero-content grid md:grid-cols-2 gap-8 flex-col lg:flex-row">
         <div className="card flex-shrink-0 w-full  max-w-md shadow-2xl ml-3 bg-base-100">
-          <form onSubmit={handleSubmit()} className="card-body ">
+          <form onSubmit={handleSubmit(handleLogin)} className="card-body ">
             
             <div className='self-center '>
               <img className='h-16 w-16 ' src={img2} alt="" />
@@ -39,7 +68,7 @@ const Login = () => {
 
           <p className='text-center'>New to the website,please <Link className='font-semibold orange-text' to='/register'>Register</Link>.</p>
 <div className='p-8'>
-<button className='btn orange-text white-bg button-border text-secondary w-full y-4'>Continue With Google</button>
+<button  onClick={handleGoogleLogIn} className='btn orange-text white-bg button-border text-secondary w-full y-4'>Continue With Google</button>
 
 </div>
         </div>
