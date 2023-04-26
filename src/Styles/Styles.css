@@ -70,8 +70,93 @@
 }
 
 .input{
-    
     border-bottom: 2px solid gray;
 }
+/******************************Share Your Post**************************/
+.create-post{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--gray-color);
+    padding: 10px;
+    padding-bottom: 0px;
+}
 
-
+.create-post input{
+    justify-self: start;
+    width:100%;
+    padding: 5px;
+    background: var(--white);
+    color: var(--second-color);
+    border-radius: 9999px;
+}
+.create-post .post-btn{
+    background-color: var(--navbar-active-bg);
+    width: 20%;
+    padding: 5px;
+    border-radius: 9999px;
+    color: var(--white);
+}
+hr{
+    width: 95%;
+    margin: auto;
+    padding-top: 10px;
+}
+.post-option{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+.post-option .option-design{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+/***************************************************See the posts or Newsfeed*******************************/
+.feeds{
+    border-top: 3px solid var(--white);
+    padding: 10px;
+    
+}
+.feed .head{
+    display: flex;
+    justify-content: space-between;
+}
+.feed .user{
+    display: flex;
+    justify-self: start;
+    align-items: center;
+    text-align: left;
+    gap: 5px;
+}
+.feed .body-text{
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.action-button .interaction-buttons{
+    display: flex;
+    padding-left: 10px;
+    padding-top: 5px;
+    justify-content: space-around;
+}
+ .interaction-buttons .like-comment-btn{
+    background-color: var(--white);
+   padding-left: 150px;
+   padding-right: 150px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   border-radius: 9999px;
+   
+}

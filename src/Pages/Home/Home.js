@@ -1,12 +1,11 @@
 import React from 'react';
 import UseTittle from '../../Hooks/UseTittle';
+import Post from '../../Shared/Posts/Post/Post';
 
 const Home = () => {
     UseTittle('Home');
     return (
-        <div className='white-bg'>
-            This is home
-        </div>
+       <Post></Post>
     );
 };
 
