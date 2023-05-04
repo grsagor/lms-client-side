@@ -77,6 +77,7 @@
 
 }
 .first-sec{
+    height: 100%;
     background-color: var(--gray-color);
 }
 .intro-sec{
@@ -237,4 +238,76 @@ hr{
 .view-interactions .view-comments:hover{
     text-decoration: underline;
 
+}
+/*********************************Assignment Part**********************************/
+.main-part{
+    background-color: var(--gray-color);
+    width: 70%;
+    margin: auto; 
+    padding: 20px;
+}
+.heading-photo{
+    display: grid;
+    justify-content: center;
+    padding-top: 10px;
+}
+.heading-photo h1{
+  font-size:large ;
+  font-weight: bold;
+}
+.add-submit{
+    display: flex;
+    justify-content: space-around;
+}
+.task-photo{
+    height: 300px;
+    width: 400px;
+}
+.add-submit label{
+    border-radius: 9999px;
+    padding: 5px;
+    border:2px solid #FF2D20 ;
+    font-weight: bold;
+} 
+.add-submit button{
+    border-radius: 9999px;
+    padding: 5px;
+    background-color:#FF2D20 ;
+    font-weight: bold;
+} 
+.add-submit label:hover{
+    background-color: #FF2D20;
+}
+/**********************************quiz*******************************/
+.quiz-first-sec{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.quiz-input{
+    display: grid;
+    padding: 5px;
+}
+.quiz-body{
+    display: grid;
+    justify-items: start;
+    padding: 10px 20px;
+}
+.quiz-button{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+}
+.quiz-button button{
+    border-radius: 9999px;
+    padding: 5px;
+    background-color:#FF2D20 ;
+    font-weight: bold;
+}
+.quiz-heading{
+    font-size: xx-large;
+    padding-top: 20px;
+    color: #FF2D20;
+    font-weight: bold;
 }
