@@ -1,0 +1,39 @@
+[debug] [2023-05-06T19:07:04.298Z] ----------------------------------------------------------------------
+[debug] [2023-05-06T19:07:04.300Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-05-06T19:07:04.301Z] CLI Version:   11.19.0
+[debug] [2023-05-06T19:07:04.301Z] Platform:      win32
+[debug] [2023-05-06T19:07:04.301Z] Node Version:  v16.15.1
+[debug] [2023-05-06T19:07:04.315Z] Time:          Sun May 07 2023 01:07:04 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-05-06T19:07:04.315Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-06T19:07:04.320Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-05-06T19:07:04.348Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-06T19:07:04.349Z] > authorizing via signed-in user (grsagor08@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  H:\My Folder\Study\Project\LMS\lms-client-side
+
+[debug] [2023-05-06T19:07:05.007Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-05-06T19:07:05.008Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-05-06T19:07:21.472Z] > refreshing access token with scopes: []
+[debug] [2023-05-06T19:07:21.473Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-05-06T19:07:21.474Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-06T19:07:21.822Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-05-06T19:07:21.823Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-06T19:07:21.835Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2023-05-06T19:07:22.716Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2023-05-06T19:07:22.716Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]

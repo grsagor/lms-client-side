@@ -5,22 +5,45 @@ import img1 from '../Register/Images/img1.png';
 import img2 from '../Register/Images/img2.png';
 import UseTittle from '../../Hooks/UseTittle';
 import { AuthContext } from '../../Context/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 
 const Register = () => {
     UseTittle('Register');
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const {createUser} = useContext(AuthContext);
-    
-    const handleSignUp = (data)=>{
+    const { createUser } = useContext(AuthContext);
+
+    const handleSignUp = (data) => {
         console.log(data);
-           createUser(data.email,data.password)
-            .then(result =>{
-                const user = result.user;
-                console.log(user);
+        createUser(data.email, data.password)
+            .then(result => {
+                saveUsers(data);
             })
-            .catch(error =>console.log(error));
-        }
+            .catch(error => console.log(error));
+    }
+
+    const saveUsers = (data) => {
+        const user = { 
+            name: data?.name, 
+            email: data?.email,
+            university: 'Not Set',
+            address: 'Not Set',
+            role: data.role,
+            classes: [],
+        };
+        fetch('http://localhost:5000/user', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success('User Created');
+            })
+    }
 
     return (
         <div>
@@ -58,15 +81,15 @@ const Register = () => {
                             </div>
 
                             <div className="form-control w-full max-w-xs mt-5">
-                        <label className="label">
-                            <span className="label-text">Are you a teacher or a student?</span>
-                        </label>
-                        <select {...register("role")} className="select select-bordered">
-                            <option disabled selected>Select one</option>
-                            <option>Teacher</option>
-                            <option>Student</option>
-                        </select>
-                    </div>
+                                <label className="label">
+                                    <span className="label-text">Are you a teacher or a student?</span>
+                                </label>
+                                <select {...register("role")} className="select select-bordered">
+                                    <option disabled selected>Select one</option>
+                                    <option>Teacher</option>
+                                    <option>Student</option>
+                                </select>
+                            </div>
 
                             <input className='btn border-none w-full mt-3 orange-bg  text-white' value='REGISTER' type="submit" />
                         </form>

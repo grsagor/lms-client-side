@@ -7,45 +7,76 @@ import img1 from '../Login/images/img1.png';
 import img2 from '../Login/images/img2.png';
 import { AuthContext } from '../../Context/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { toast } from 'react-hot-toast';
 
 
 const Login = () => {
   UseTittle('Login');
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
-  const {LogIn,googleLogIn} = useContext(AuthContext);
+  const { LogIn, googleLogIn } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
 
 
-  const handleLogin=data=>{
-    LogIn(data.email,data.password)
-    .then(result =>{
+  const handleLogin = data => {
+    LogIn(data.email, data.password)
+      .then(result => {
         const user = result.user;
         console.log(user);
         console.log('login')
-    })
-    .catch(error =>{
+      })
+      .catch(error => {
         console.log(error)
-    });
+      });
   }
-    const handleGoogleLogIn = () => {
-      googleLogIn(googleProvider)
+  const handleGoogleLogIn = () => {
+    googleLogIn(googleProvider)
       .then(result => {
-              const user = result.user;
-              console.log(user);
+        const user = result.user;
+        saveUsers(user);
+      })
+      .catch(error => {
+        console.error(error);
+      })
+  }
+
+  const saveUsers = (data) => {
+    fetch(`http://localhost:5000/users?email=${data.email}`)
+      .then(res => res.json())
+      .then(users => {
+        if (users.length > 0) {
+          console.log('User Found')
+        }
+        if (users.length < 1) {
+          const user = {
+            name: data.displayName,
+            email: data.email,
+            university: 'Not Set',
+            address: 'Not Set',
+            role: "Student",
+            classes: [],
+          };
+          fetch('http://localhost:5000/user', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
           })
-          .catch(error => {
-              console.error(error);
-          })
-    }
-  
+            .then(res => res.json())
+            .then(data => {
+              toast.success('Logged In');
+            })
+        }
+      })
+  }
 
   return (
     <div className="hero p-5 bg-base-100">
       <div className="hero-content grid md:grid-cols-2 gap-8 flex-col lg:flex-row">
         <div className="card flex-shrink-0 w-full  max-w-md shadow-2xl ml-3 bg-base-100">
           <form onSubmit={handleSubmit(handleLogin)} className="card-body ">
-            
+
             <div className='self-center '>
               <img className='h-16 w-16 ' src={img2} alt="" />
             </div>
@@ -67,10 +98,10 @@ const Login = () => {
           </form>
 
           <p className='text-center'>New to the website,please <Link className='font-semibold orange-text' to='/register'>Register</Link>.</p>
-<div className='p-8'>
-<button  onClick={handleGoogleLogIn} className='btn orange-text white-bg button-border text-secondary w-full y-4'>Continue With Google</button>
+          <div className='p-8'>
+            <button onClick={handleGoogleLogIn} className='btn orange-text white-bg button-border text-secondary w-full y-4'>Continue With Google</button>
 
-</div>
+          </div>
         </div>
         <div className="text-center lg:text-left">
           <img className='w-full h-4/5 rounded-3xl' src={img1} alt="" />
