@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../Styles/Styles.css';
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Navbar = () => {
     const [bgColor1, setBgColor1] = useState('white');
@@ -8,6 +10,8 @@ const Navbar = () => {
     const [bgColor3, setBgColor3] = useState('white');
     const [bgColor4, setBgColor4] = useState('white');
     const [bgColor5, setBgColor5] = useState('white');
+    const [bgColor6, setBgColor6] = useState('white');
+
 
     const mouseEvent1 = (color) => {
         setBgColor1(color);
@@ -24,21 +28,43 @@ const Navbar = () => {
     const mouseEvent5 = (color) => {
         setBgColor5(color);
     }
+    const mouseEvent6 = (color) => {
+        setBgColor6(color);
+    }
 
-    const menuItems = <>
-    <li><Link style={{backgroundColor: bgColor1}} onMouseDown={() => mouseEvent1('#FF2D20')} onMouseUp={() => mouseEvent1('white')} to='/'>Home</Link></li>
-    <li><Link style={{backgroundColor: bgColor2}} onMouseDown={() => mouseEvent2('#FF2D20')} onMouseUp={() => mouseEvent2('white')} to='/assignment'>Assignment</Link></li>
-    <li><Link style={{backgroundColor: bgColor4}} onMouseDown={() => mouseEvent4('#FF2D20')} onMouseUp={() => mouseEvent4('white')} to='/quiz'>Quiz</Link></li>
-    <li><Link style={{backgroundColor: bgColor3}} onMouseDown={() => mouseEvent3('#FF2D20')} onMouseUp={() => mouseEvent3('white')} to=''>Blog</Link></li>
-    <li><Link style={{backgroundColor: bgColor4}} onMouseDown={() => mouseEvent4('#FF2D20')} onMouseUp={() => mouseEvent4('white')} to=''>Abuot Us</Link></li>
-    <li><Link style={{backgroundColor: bgColor5}} onMouseDown={() => mouseEvent5('#FF2D20')} onMouseUp={() => mouseEvent5('white')} to='login'><button className="orange-bg text-white p-2 rounded-lg px-5">Login</button></Link></li>
-</>
+    const { user, logOut } = useContext(AuthContext);
+    console.log(user);
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => {
+                console.log(error);
+            })
+        }
+        const menuItems = <>
+            <li><Link style={{ backgroundColor: bgColor1 }} onMouseDown={() => mouseEvent1('#FF2D20')} onMouseUp={() => mouseEvent1('white')} to='/'>Home</Link></li>
+            <li><Link style={{ backgroundColor: bgColor2 }} onMouseDown={() => mouseEvent2('#FF2D20')} onMouseUp={() => mouseEvent2('white')} to='/assignment'>Assignment</Link></li>
+            <li><Link style={{ backgroundColor: bgColor4 }} onMouseDown={() => mouseEvent4('#FF2D20')} onMouseUp={() => mouseEvent4('white')} to='/quiz'>Quiz</Link></li>
+            <li><Link style={{ backgroundColor: bgColor3 }} onMouseDown={() => mouseEvent3('#FF2D20')} onMouseUp={() => mouseEvent3('white')} to=''>Blog</Link></li>
+            <li><Link style={{ backgroundColor: bgColor4 }} onMouseDown={() => mouseEvent4('#FF2D20')} onMouseUp={() => mouseEvent4('white')} to=''>Abuot Us</Link></li>
+            {user ?
+                    <>
+                        <li><Link style={{ backgroundColor: bgColor6 }} onMouseDown={() => mouseEvent6('#FF2D20')} onMouseUp={() => mouseEvent6('white')} to=''><button className="orange-bg text-white p-2 rounded-lg px-5" onClick={handleLogOut}>LogOut</button></Link></li>
+                    </>
+                    :
+                    <>
+                        <li><Link style={{ backgroundColor: bgColor5 }} onMouseDown={() => mouseEvent5('#FF2D20')} onMouseUp={() => mouseEvent5('white')} to='login'><button className="orange-bg text-white p-2 rounded-lg px-5">Login</button></Link></li>
+
+                    </>
+            }
+        </>
+    
 
     return (
         <div className="navbar drop-shadow">
             <div className="flex-1">
                 <Link className="btn btn-ghost normal-case text-xl font-grotesque leading-9 tracking-widest orange-text">
-EduMart.bd
+                    EduMart.bd
                 </Link>
             </div>
             <div className="flex-none secondary-text">

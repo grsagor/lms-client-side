@@ -6,6 +6,7 @@ import Register from "../Pages/Register/Register";
 import Post from "../Shared/Posts/Post/Post";
 import Assignment from "../Shared/Posts/Assignment/Assignment";
 import Quiz from "../Shared/Posts/Quiz/Quiz";
+import AddQuiz from "../Shared/Posts/Quiz/AddQuiz";
 
 export const router = createBrowserRouter([
 	{
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
 			{
 				path: "/quiz",
 				element: <Quiz></Quiz>,
+			},	
+			{
+				path: "/addquiz",
+				element: <AddQuiz></AddQuiz>,
 			},				
 		],
 	},
