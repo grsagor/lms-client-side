@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const Quiz = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit} = useForm();
 
     return (
         <>
@@ -22,19 +22,19 @@ const Quiz = () => {
                     <h1>Q.What is your profession?</h1>
                     <div className="quiz-input">
                         <div>
-                        <input {...register("name")} type="checkbox" id='option1' className="checkoption" value='1' />
+                        <input {...register("first")} type="checkbox" id='option1' className="radio" value='1' />
                         <label for='option1'>Student</label>
                         </div>
                         <div>
-                        <input {...register("name")} type="checkbox" id='option1' className="checkoption" value='1' />
+                        <input {...register("second")} type="checkbox" id='option2' className="radio" value='1' />
                         <label for='option1'>Student</label>
                         </div>
                         <div>
-                        <input {...register("name")} type="checkbox" id='option1' className="checkoption" value='1' />
+                        <input {...register("third")} type="checkbox" id='option3' className="radio" value='1' />
                         <label for='option1'>Student</label>
                         </div>
                         <div>
-                        <input {...register("name")} type="checkbox" id='option1' className="checkoption" value='1' />
+                        <input {...register("fourth")} type="checkbox" id='option4' className="radio" value='1' />
                         <label for='option1'>Student</label>
                         </div>
                     </div>

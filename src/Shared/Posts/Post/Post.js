@@ -7,11 +7,13 @@ import { MdQuiz } from "react-icons/md";
 import { SlLike } from "react-icons/sl";
 import { TfiComment } from "react-icons/tfi";
 import { BiLike, BiComment } from "react-icons/bi";
-
-
+import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 
 const Post = () => {
+    const { register, handleSubmit } = useForm();
+
     return (
         <div className='p-5 '>
             <div className='first grid grid-cols-12 gap-5'>
@@ -36,14 +38,15 @@ const Post = () => {
                 {/* *****************Mid Section****************** */}
 
                 <div className='col-span-6 rounded '>
+                    <form onSubmit={handleSubmit()}>
                     <div className='create-post'>
                         <div className='write-post gap-3 '>
                             <div >
                                 <img className='h-16 w-16 rounded-full ' src={img2} alt="" />
                             </div>
 
-                            <input type='text' value='Write something here!' id='create-post' />
-                            <input type='submit' value='POST' className='post-btn orange-bg' />
+                            <input {...register("text")} type='text' value='Write something here!' id='create-post' />
+                            <input {...register("post")} type='submit' value='POST' className='post-btn orange-bg' />
                         </div>
 
                         <hr className='w-20px' />
@@ -51,21 +54,21 @@ const Post = () => {
                         <div className='post-option'>
                             <div className='option-design'>
                                 <FaFileUpload></FaFileUpload>
-                                <input type='file' id='file' className='inputfile' />
+                                <input {...register("addfile")} type='file' id='file' className='inputfile' />
                                 <label for='file'>Add file</label>
                             </div>
                             <div className='option-design'>
                                 <FaTasks></FaTasks>
-                                <input type='file' id='file' className='inputfile' />
+                                <input {...register("addtask")} type='file' id='file' className='inputfile' />
                                 <label for='file'>Add Task</label>
                             </div>
                             <div className='option-design'>
                                 <MdQuiz></MdQuiz>
-                                <input type='file' id='file' className='inputfile' />
-                                <label for='file'>Add Quiz</label>
+                                <button><Link to='/addquiz'>Add Quiz</Link></button> 
                             </div>
                         </div>
                     </div>
+                    </form>
                     {/* *********************************************Feeds*********************************************** */}
 
                     <div className='feeds'>
