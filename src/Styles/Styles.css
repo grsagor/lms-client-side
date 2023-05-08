@@ -22,6 +22,7 @@
 .orange-text {
     color: var(--orange);
 }
+
 .button-border {
     border: 1px solid var(--orange);
 }
@@ -34,18 +35,30 @@
     color: var(--second-color);
 }
 
+.add-class-btn {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    position: fixed;
+    right: 5%;
+    top: calc(100vh - 15%);
+    border-radius: 50%;
+}
+
 /* Making footer bottom for less content start */
 .full-body {
-    text-align:center;
-    display:flex;
-    flex-direction:column;
-    min-height:100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-color: var(--white) !important;
+    position: relative;
 }
 
 .outlet-body {
-    flex:1;
+    flex: 1;
 }
+
 /* Making footer bottom for less content end */
 
 
@@ -57,7 +70,7 @@
     padding: 0 .5rem;
 }
 
-.navbar Link:active:hover{
+.navbar Link:active:hover {
     background-color: var(--orange);
 }
 
@@ -69,18 +82,21 @@
     height: 50px;
 }
 
-.input{
+.input {
     border-bottom: 2px solid gray;
 }
-.first{
+
+.first {
     border-radius: 4px;
 
 }
-.first-sec{
+
+.first-sec {
     height: 100%;
     background-color: var(--gray-color);
 }
-.intro-sec{
+
+.intro-sec {
     display: grid;
     justify-content: center;
     height: 20%;
@@ -88,32 +104,38 @@
     background: linear-gradient(180deg, #FF2D20 50%, #F9F9F9 50%);
 
 }
-.intro-sec h3{
+
+.intro-sec h3 {
     font-size: large;
     font-weight: bold;
 }
-.intro-sec .intro-sec-photo{
+
+.intro-sec .intro-sec-photo {
     height: 100px;
     margin-top: 50px;
     border: 7px solid white;
-   border-radius: 9999px;
+    border-radius: 9999px;
 
 }
-.classes{
-display: grid;
-justify-content: start;
-padding-left:15px ;
+
+.classes {
+    display: grid;
+    justify-content: start;
+    padding-left: 15px;
 }
-.classes button:hover{
+
+.classes button:hover {
     text-decoration: underline;
 }
+
 /******************************Share Your Post**************************/
-.create-post{
+.create-post {
     border-radius: 4px;
     background-color: var(--gray-color);
     margin-bottom: 10px;
 }
-.write-post{
+
+.write-post {
     width: 100%;
     display: flex;
     align-items: center;
@@ -122,98 +144,114 @@ padding-left:15px ;
     padding-bottom: 0px;
 }
 
-.write-post input{
+.write-post input {
     justify-self: start;
-    width:100%;
+    width: 100%;
     padding: 5px;
     background: var(--white);
     color: var(--second-color);
     border-radius: 9999px;
 }
-.write-post .post-btn{
+
+.write-post .post-btn {
     background-color: var(--navbar-active-bg);
     width: 20%;
     padding: 5px;
     border-radius: 9999px;
     color: var(--white);
 }
-hr{
+
+hr {
     width: 95%;
     margin: auto;
     padding-top: 10px;
 }
-.post-option{
+
+.post-option {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px;
-    
+
 }
-.post-option .option-design{
+
+.post-option .option-design {
     display: flex;
     gap: 5px;
     align-items: center;
 }
+
 .inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }
+
 /***************************************************See the posts or Newsfeed*******************************/
-.feeds{
-    padding: 0px;    
+.feeds {
+    padding: 0px;
 }
-.feed{
+
+.feed {
     border-radius: 4px;
     background-color: var(--gray-color);
     margin-bottom: 5px;
 
 }
-.feed .head{
+
+.feed .head {
     display: flex;
     justify-content: space-between;
 }
-.feed .user{
+
+.feed .user {
     display: flex;
     justify-self: start;
     align-items: center;
     text-align: left;
     gap: 5px;
 }
-.edit{
+
+.edit {
     padding: 20px;
 }
-.feed .body-text{
+
+.feed .body-text {
     text-align: left;
-   padding: 10px 10px;
+    padding: 10px 10px;
 }
-.photo{
+
+.photo {
     height: 400px;
     width: 100%;
     padding: 5px 10px;
 }
-.action-button{
+
+.action-button {
     padding-bottom: 10px;
 }
-.action-button .interaction-buttons{
+
+.action-button .interaction-buttons {
     display: flex;
     padding-left: 10px;
     padding-top: 5px;
     justify-content: space-around;
 }
- .interaction-buttons .like-comment-btn{
+
+.interaction-buttons .like-comment-btn {
     background-color: var(--white);
-   padding-left: 150px;
-   padding-right: 150px;
-   padding-top: 10px;
-   padding-bottom: 10px;
-   border-radius: 9999px; 
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 9999px;
 }
-.feed .view-interactions{
+
+.feed .view-interactions {
     display: flex;
     font-size: small;
     align-items: center;
@@ -221,91 +259,110 @@ hr{
     padding: 0px 10px;
     padding-bottom: 10px;
 }
-.view-interactions .view-likes{
+
+.view-interactions .view-likes {
     display: flex;
     align-items: center;
 }
-.view-interactions .view-comments{
+
+.view-interactions .view-comments {
     display: flex;
     align-items: center;
 }
-.view-interactions button{
+
+.view-interactions button {
     padding-left: 3px;
 }
-.view-interactions .view-likes:hover{
-   text-decoration: underline;
+
+.view-interactions .view-likes:hover {
+    text-decoration: underline;
 }
-.view-interactions .view-comments:hover{
+
+.view-interactions .view-comments:hover {
     text-decoration: underline;
 
 }
+
 /*********************************Assignment Part**********************************/
-.main-part{
+.main-part {
     background-color: var(--gray-color);
     width: 70%;
-    margin: auto; 
+    margin: auto;
     padding: 20px;
 }
-.heading-photo{
+
+.heading-photo {
     display: grid;
     justify-content: center;
     padding-top: 10px;
 }
-.heading-photo h1{
-  font-size:large ;
-  font-weight: bold;
+
+.heading-photo h1 {
+    font-size: large;
+    font-weight: bold;
 }
-.add-submit{
+
+.add-submit {
     display: flex;
     justify-content: space-around;
 }
-.task-photo{
+
+.task-photo {
     height: 300px;
     width: 400px;
 }
-.add-submit label{
+
+.add-submit label {
     border-radius: 9999px;
     padding: 5px;
-    border:2px solid #FF2D20 ;
+    border: 2px solid #FF2D20;
     font-weight: bold;
-} 
-.add-submit button{
+}
+
+.add-submit button {
     border-radius: 9999px;
     padding: 5px;
-    background-color:#FF2D20 ;
+    background-color: #FF2D20;
     font-weight: bold;
-} 
-.add-submit label:hover{
+}
+
+.add-submit label:hover {
     background-color: #FF2D20;
 }
+
 /**********************************quiz*******************************/
-.quiz-first-sec{
+.quiz-first-sec {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
 }
-.quiz-input{
+
+.quiz-input {
     display: grid;
     padding: 5px;
 }
-.quiz-body{
+
+.quiz-body {
     display: grid;
     justify-items: start;
     padding: 10px 20px;
 }
-.quiz-button{
+
+.quiz-button {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
 
 }
-.quiz-button button{
+
+.quiz-button button {
     border-radius: 9999px;
     padding: 5px;
-    background-color:#FF2D20 ;
+    background-color: #FF2D20;
     font-weight: bold;
 }
-.quiz-heading{
+
+.quiz-heading {
     font-size: xx-large;
     padding-top: 20px;
     color: #FF2D20;
