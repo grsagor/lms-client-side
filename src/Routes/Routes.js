@@ -7,6 +7,7 @@ import Post from "../Shared/Posts/Post/Post";
 import Assignment from "../Shared/Posts/Assignment/Assignment";
 import Quiz from "../Shared/Posts/Quiz/Quiz";
 import AddQuiz from "../Shared/Posts/Quiz/AddQuiz";
+import Addtask from "../Shared/Posts/Tasks/Addtask";
 
 export const router = createBrowserRouter([
 	{
@@ -40,7 +41,11 @@ export const router = createBrowserRouter([
 			{
 				path: "/addquiz",
 				element: <AddQuiz></AddQuiz>,
-			},				
+			},
+			{
+				path: "/addtask",
+				element: <Addtask></Addtask>
+			},		
 		],
 	},
 ]);
