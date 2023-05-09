@@ -60,7 +60,7 @@ const Post = () => {
                             <div className='option-design'>
                                 <FaTasks></FaTasks>
                                 <input {...register("addtask")} type='file' id='file' className='inputfile' />
-                                <label for='file'>Add Task</label>
+                                <label for='file'><Link to='/addtask'>Add Task</Link></label>
                             </div>
                             <div className='option-design'>
                                 <MdQuiz></MdQuiz>

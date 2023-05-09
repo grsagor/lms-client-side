@@ -3,6 +3,8 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../../Shared/Footer/Footer';
 import Navbar from '../../Shared/Navbar/Navbar';
 import { useForm } from 'react-hook-form';
+import { IoAdd } from "react-icons/io5";
+
 
 const Main = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -11,7 +13,7 @@ const Main = () => {
             <Navbar></Navbar>
             <Outlet className="outlet-body"></Outlet>
             <Footer></Footer>
-            <label htmlFor="my-modal" className='add-class-btn btn'></label>
+            <label htmlFor="my-modal" className='add-class-btn btn'><IoAdd></IoAdd></label>
 
             <input type="checkbox" id="my-modal" className="modal-toggle" />
             <div className="modal">

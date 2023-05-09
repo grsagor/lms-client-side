@@ -38,11 +38,14 @@
 .add-class-btn {
     width: 50px;
     height: 50px;
-    background-color: black;
+    background-color: var(--orange);
     position: fixed;
     right: 5%;
     top: calc(100vh - 15%);
     border-radius: 50%;
+    border: none;
+    font-size: 20px;
+   
 }
 
 /* Making footer bottom for less content start */
@@ -173,13 +176,13 @@ hr {
     align-items: center;
     justify-content: space-between;
     padding: 15px;
-
+  
 }
 
 .post-option .option-design {
     display: flex;
     gap: 5px;
-    align-items: center;
+    align-items: center;   
 }
 
 .inputfile {
@@ -189,6 +192,7 @@ hr {
     overflow: hidden;
     position: absolute;
     z-index: -1;
+   
 }
 
 /***************************************************See the posts or Newsfeed*******************************/
@@ -367,4 +371,23 @@ hr {
     padding-top: 20px;
     color: #FF2D20;
     font-weight: bold;
+}
+/****************************************Task**********************/
+.task-main{
+    height: 100%;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: ;
+    background-color: var(--gray-color);
+}
+.task-img{
+    height: 400px;
+    width: 400px;
+    padding: 30px 20px;
+
+}
+.task-body{
+    display: grid;
 }
