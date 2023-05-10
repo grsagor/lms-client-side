@@ -379,7 +379,6 @@ hr {
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: ;
     background-color: var(--gray-color);
 }
 .task-img{
@@ -390,4 +389,25 @@ hr {
 }
 .task-body{
     display: grid;
+}
+.task-label{
+    padding-right: 10px;
+}
+.task-input{
+    border-radius: 9999px;
+}
+.task-label-input{
+    display: flex;
+    padding: 10px;
+    color: #FF2D20;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: space-between;
+}
+/****************************************Addquiz*********************/
+.addquiz-input{
+    border:2px solid rgb(218, 41, 41);
+}
+.addquiz-label{
+    align-items: start;
 }
