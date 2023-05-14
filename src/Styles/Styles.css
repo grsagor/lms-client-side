@@ -179,7 +179,7 @@ hr {
   
 }
 
-.post-option .option-design {
+.option-design {
     display: flex;
     gap: 5px;
     align-items: center;   
@@ -390,6 +390,13 @@ hr {
 .task-body{
     display: grid;
 }
+.task-body button{
+    border-radius: 9999px;
+    padding: 5px;
+    background-color: #FF2D20;
+    font-weight: bold;
+    width: 100%;
+}
 .task-label{
     padding-right: 10px;
 }
@@ -403,6 +410,13 @@ hr {
     font-size: 20px;
     font-weight: bold;
     justify-content: space-between;
+    gap: 10px;
+}
+.task-body span{
+   padding: 10px;
+}
+.task-btn{
+    padding:40px 10px;
 }
 /****************************************Addquiz*********************/
 .addquiz-input{
