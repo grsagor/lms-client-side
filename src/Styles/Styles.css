@@ -419,9 +419,45 @@ hr {
     padding:40px 10px;
 }
 /****************************************Addquiz*********************/
+.addquiz-heading{
+   display: grid;
+   justify-content: center;
+   padding: 10px;
+   color: #FF2D20;
+   font-size: xx-large;
+   font-weight: bold;
+}
+.addquiz-body{
+    width: 70%;
+    margin: auto;
+    color: #FF2D20;
+    border: 1px solid #FF2D20;
+    border-radius: 4px;
+    
+}
+.addquiz-btn{
+    background-color: #FF2D20;
+}
 .addquiz-input{
-    border:2px solid rgb(218, 41, 41);
+    border:1px solid #FF2D20 ;
 }
 .addquiz-label{
     align-items: start;
+}
+.addquiz-label-input{
+    display: flex;
+    padding: 10px;
+    color: #FF2D20;
+    font-size: 20px;
+    gap: 10px;
+}
+.addquiz-firstsec{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    justify-items: end;
+    padding-top: 10px;
+}
+.addquiz-firstsec input{
+    border-bottom: 1px solid #FF2D20;
 }
