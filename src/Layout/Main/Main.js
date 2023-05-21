@@ -24,10 +24,6 @@ const Main = () => {
     });
 
     useEffect(()=>{refetch()},[user])
-
-    console.log(user);
-    console.log(loggedUser);
-
     const teacher = loggedUser[0]?.role === 'Teacher';
     const student = loggedUser[0]?.role === 'Student';
 
