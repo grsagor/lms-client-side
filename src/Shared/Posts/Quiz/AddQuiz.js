@@ -47,14 +47,26 @@ const AddQuiz = () => {
       <div className="addquiz-body">
         <form onSubmit={handleSubmit}>
           <div className='addquiz-firstsec'>
-            <div className='addquiz-label-input'>
+           <div>
+           <div className='addquiz-label-input'>
               <label for='' className='addquiz-label'>Title</label>
-              <input {...register("addtask")} type='test' className="" />
+              <input {...register("addquiz")} type='text' className="" />
             </div>
             <div className='addquiz-label-input'>
               <label for=''>Descripton</label>
-              <input {...register("addtask")} type='test'  className="" />
+              <input {...register("addquiz")} type='text'  className="" />
             </div>
+           </div>
+           <div>
+           <div className='addquiz-label-input'>
+              <label for=''>Date</label>
+              <input {...register("addquiz")} type='date'  className="" />
+            </div>
+            <div className='addquiz-label-input'>
+              <label for=''>Time</label>
+              <input {...register("addquiz")} type='time'  className="" />
+            </div>
+           </div>
           </div>
           <hr className='w-20px' />
           <div className="flex flex-row justify-start px-5  text-xl font-bold">

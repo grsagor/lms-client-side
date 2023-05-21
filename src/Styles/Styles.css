@@ -294,7 +294,12 @@ hr {
     margin: auto;
     padding: 20px;
 }
-
+.deadline{
+    display: flex;
+    justify-content: start;
+    gap: 60px;
+    padding-top: 10px;
+}
 .heading-photo {
     display: grid;
     justify-content: center;
@@ -340,6 +345,13 @@ hr {
     justify-content: space-between;
     padding: 10px 20px;
 }
+.quiz-label-input{
+    display: flex;
+    padding: 5px;
+    justify-items: start;
+    justify-content: space-between;
+    gap: 10px;
+}
 
 .quiz-input {
     display: grid;
@@ -380,6 +392,7 @@ hr {
     display: flex;
     align-items: center;
     background-color: var(--gray-color);
+    border-radius: 4px;
 }
 .task-img{
     height: 400px;
@@ -418,6 +431,15 @@ hr {
 .task-btn{
     padding:40px 10px;
 }
+.date-time{
+    display: flex;
+    font-weight: bold;
+    padding-right: 10px;
+    
+}
+.date-time input{
+   border-radius: 9999px;
+}
 /****************************************Addquiz*********************/
 .addquiz-heading{
    display: grid;
@@ -453,10 +475,11 @@ hr {
 }
 .addquiz-firstsec{
     width: 100%;
-    display: grid;
+    display: flex;
     justify-content: center;
     justify-items: end;
     padding-top: 10px;
+    gap: 35px;
 }
 .addquiz-firstsec input{
     border-bottom: 1px solid #FF2D20;

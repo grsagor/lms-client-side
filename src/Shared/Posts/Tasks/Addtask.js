@@ -16,17 +16,23 @@ const Addtask = () => {
                 <form className='task-body'>
                     <div className='task-label-input'>
                         <label for='' className='task-label'>Title</label>
-                        <input {...register("addtask")} type='test' className="task-input" />
+                        <input {...register("addtask")} type='text' className="task-input" />
                     </div>
                     <div className='task-label-input'>
                         <label for=''>Descripton</label>
-                        <input {...register("addtask")} type='test' className="task-input" />
+                        <input {...register("addtask")} type='text' className="task-input" />
                     </div>
                     
                     <div className='option-design p-3'>
                     <GoFileSymlinkDirectory></GoFileSymlinkDirectory>
                         <label for='file'><span>Choose file</span></label>
                         <input {...register("addtask")} type='file' id='file' className='inputfile' />
+                    </div>
+                    <div className='date-time'>
+                        <label for='file'><span>Date</span></label>
+                        <input {...register("addtask")} type='date' id='file' className='' />
+                        <label for='file'><span>Time</span></label>
+                        <input {...register("addtask")} type='time' id='file' className='' />
                     </div>
                     <div className='task-btn'>
                     <button>Submit</button>
