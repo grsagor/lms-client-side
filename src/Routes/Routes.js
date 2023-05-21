@@ -8,6 +8,7 @@ import Assignment from "../Shared/Posts/Assignment/Assignment";
 import Quiz from "../Shared/Posts/Quiz/Quiz";
 import AddQuiz from "../Shared/Posts/Quiz/AddQuiz";
 import Addtask from "../Shared/Posts/Tasks/Addtask";
+import SubmitTask from "../Shared/Posts/Tasks/SubmitTask";
 
 export const router = createBrowserRouter([
 	{
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
 			{
 				path: "/addtask",
 				element: <Addtask></Addtask>
+			},	
+			{
+				path: "/submittask",
+				element: <SubmitTask></SubmitTask>
 			},		
 		],
 	},

@@ -42,7 +42,7 @@ const Navbar = () => {
         }
         const menuItems = <>
             <li><Link style={{ backgroundColor: bgColor1 }} onMouseDown={() => mouseEvent1('#FF2D20')} onMouseUp={() => mouseEvent1('white')} to='/'>Home</Link></li>
-            <li><Link style={{ backgroundColor: bgColor2 }} onMouseDown={() => mouseEvent2('#FF2D20')} onMouseUp={() => mouseEvent2('white')} to='/assignment'>Assignment</Link></li>
+            <li><Link style={{ backgroundColor: bgColor2 }} onMouseDown={() => mouseEvent2('#FF2D20')} onMouseUp={() => mouseEvent2('white')} to='/submittask'>Assignment</Link></li>
             <li><Link style={{ backgroundColor: bgColor4 }} onMouseDown={() => mouseEvent4('#FF2D20')} onMouseUp={() => mouseEvent4('white')} to='/quiz'>Quiz</Link></li>
             <li><Link style={{ backgroundColor: bgColor3 }} onMouseDown={() => mouseEvent3('#FF2D20')} onMouseUp={() => mouseEvent3('white')} to=''>Blog</Link></li>
             <li><Link style={{ backgroundColor: bgColor4 }} onMouseDown={() => mouseEvent4('#FF2D20')} onMouseUp={() => mouseEvent4('white')} to=''>Abuot Us</Link></li>

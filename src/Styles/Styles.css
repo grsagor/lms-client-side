@@ -484,3 +484,32 @@ hr {
 .addquiz-firstsec input{
     border-bottom: 1px solid #FF2D20;
 }
+/****************************************Submit Task********************************/
+.submit-main-part{
+    width: 60%;
+    display: grid;
+    justify-content: start;
+    margin:30px auto;
+    border: 1px solid var(--navbar-active-bg);
+    padding: 20px;
+}
+.submit-main-part h2{
+    font-size: 30px;
+    color: #FF2D20;
+}
+.submit-main-part h4{
+    font-size: 20px;
+}
+.submit-btn{
+    border-radius: 9999px;
+    padding: 5px;
+    background-color: #FF2D20;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    font-size: 30px;
+}
