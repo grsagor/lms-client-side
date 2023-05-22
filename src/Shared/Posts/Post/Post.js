@@ -27,7 +27,7 @@ const Post = () => {
                     <hr className='w-20px' />
 
                     <div className='classes'>
-                        <button>CSI 111:Computer graphics</button>
+                        <button><Link to='/class'>CSI 111:Computer graphics</Link></button>
                         <button>CSI 111:Computer graphics</button>
                         <button>CSI 111:Computer graphics</button>
                         <button>CSI 111:Computer graphics</button>
