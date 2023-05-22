@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { VscAdd } from 'react-icons/vsc'
+import { AuthContext } from '../../../Context/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const AddQuiz = () => {
+  const {user} = useContext(AuthContext);
   const [questions, setQuestions] = useState([]);
-  const { register } = useForm();
+  const { register, handleSubmit } = useForm();
 
 
   // function to add two new input fields to the form
@@ -34,9 +37,29 @@ const AddQuiz = () => {
   }
 
   // function to handle form submission
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(questions);
+  const handlePost = (data) => {
+    const quiz = {
+      email: user?.email,
+      type: 'quiz',
+      title: data.title,
+      description: data.description,
+      questions: questions,
+      date: data.date,
+      time: data.time,
+    }
+
+    fetch('http://localhost:5000/post', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(quiz)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success('User Created');
+            })
   }
 
   return (
@@ -45,26 +68,26 @@ const AddQuiz = () => {
         <p className=" ">PREPARE YOUR ASSESSMENT</p>
       </div>
       <div className="addquiz-body">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(handlePost)}>
           <div className='addquiz-firstsec'>
            <div>
            <div className='addquiz-label-input'>
               <label for='' className='addquiz-label'>Title</label>
-              <input {...register("addquiz")} type='text' className="" />
+              <input {...register("title")} type='text' className="" />
             </div>
             <div className='addquiz-label-input'>
               <label for=''>Descripton</label>
-              <input {...register("addquiz")} type='text'  className="" />
+              <input {...register("description")} type='text'  className="" />
             </div>
            </div>
            <div>
            <div className='addquiz-label-input'>
               <label for=''>Date</label>
-              <input {...register("addquiz")} type='date'  className="" />
+              <input {...register("date")} type='date'  className="" />
             </div>
             <div className='addquiz-label-input'>
               <label for=''>Time</label>
-              <input {...register("addquiz")} type='time'  className="" />
+              <input {...register("time")} type='time'  className="" />
             </div>
            </div>
           </div>
