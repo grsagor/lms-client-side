@@ -3,8 +3,10 @@ import { useForm } from 'react-hook-form';
 import { VscAdd } from 'react-icons/vsc'
 import { AuthContext } from '../../../Context/AuthProvider';
 import { toast } from 'react-hot-toast';
+import { useParams } from 'react-router-dom';
 
 const AddQuiz = () => {
+  const { courseID } = useParams();
   const {user} = useContext(AuthContext);
   const [questions, setQuestions] = useState([]);
   const { register, handleSubmit } = useForm();
@@ -46,6 +48,7 @@ const AddQuiz = () => {
       questions: questions,
       date: data.date,
       time: data.time,
+      courseID: courseID,
     }
 
     fetch('http://localhost:5000/post', {

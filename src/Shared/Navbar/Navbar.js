@@ -11,6 +11,7 @@ const Navbar = () => {
     const [bgColor4, setBgColor4] = useState('white');
     const [bgColor5, setBgColor5] = useState('white');
     const [bgColor6, setBgColor6] = useState('white');
+    const [bgColor7, setBgColor7] = useState('white');
 
 
     const mouseEvent1 = (color) => {
@@ -31,6 +32,9 @@ const Navbar = () => {
     const mouseEvent6 = (color) => {
         setBgColor6(color);
     }
+    const mouseEvent7 = (color) => {
+        setBgColor7(color);
+    }
 
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
@@ -46,6 +50,7 @@ const Navbar = () => {
             <li><Link style={{ backgroundColor: bgColor4 }} onMouseDown={() => mouseEvent4('#FF2D20')} onMouseUp={() => mouseEvent4('white')} to='/quiz'>Quiz</Link></li>
             <li><Link style={{ backgroundColor: bgColor3 }} onMouseDown={() => mouseEvent3('#FF2D20')} onMouseUp={() => mouseEvent3('white')} to=''>Blog</Link></li>
             <li><Link style={{ backgroundColor: bgColor4 }} onMouseDown={() => mouseEvent4('#FF2D20')} onMouseUp={() => mouseEvent4('white')} to=''>Abuot Us</Link></li>
+            <li><Link style={{ backgroundColor: bgColor7 }} onMouseDown={() => mouseEvent7('#FF2D20')} onMouseUp={() => mouseEvent7('white')} to='/class'>All Classes</Link></li>
             {user ?
                     <>
                         <li><Link style={{ backgroundColor: bgColor6 }} onMouseDown={() => mouseEvent6('#FF2D20')} onMouseUp={() => mouseEvent6('white')} to=''><button className="orange-bg text-white p-2 rounded-lg px-5" onClick={handleLogOut}>LogOut</button></Link></li>
@@ -62,7 +67,7 @@ const Navbar = () => {
     return (
         <div className="navbar drop-shadow">
             <div className="flex-1">
-                <Link className="btn btn-ghost normal-case text-xl font-grotesque leading-9 tracking-widest orange-text">
+                <Link className="btn btn-ghost normal-case text-xl font-grotesque leading-9 tracking-widest orange-text" to='/'>
                     EduMart.bd
                 </Link>
             </div>

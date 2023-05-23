@@ -5,9 +5,12 @@ import { GoFileSymlinkDirectory } from "react-icons/go";
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider';
 import { toast } from 'react-hot-toast';
+import { useParams } from 'react-router-dom';
 
 
 const Addtask = () => {
+  const { courseID } = useParams();
+console.log(courseID)
     const { register, handleSubmit } = useForm();
     const {user} = useContext(AuthContext);
 
@@ -21,6 +24,7 @@ const Addtask = () => {
         formData.append('description', description);
         formData.append('date', date);
         formData.append('time', time);
+        formData.append('courseID', courseID);
         for (let i = 0; i < files?.length; i++) {
           formData.append('photos', files[i]);
         }

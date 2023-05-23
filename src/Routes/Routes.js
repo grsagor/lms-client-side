@@ -9,7 +9,7 @@ import Quiz from "../Shared/Posts/Quiz/Quiz";
 import AddQuiz from "../Shared/Posts/Quiz/AddQuiz";
 import Addtask from "../Shared/Posts/Tasks/Addtask";
 import SubmitTask from "../Shared/Posts/Tasks/SubmitTask";
-import Class from "../Pages/Classes/Classes";
+import Class from "../Pages/Classes/Class/Class";
 import Classes from "../Pages/Classes/Classes";
 
 export const router = createBrowserRouter([
@@ -27,6 +27,13 @@ export const router = createBrowserRouter([
 					{
 						path: '/',
 						element: <Post></Post>
+					},
+					{
+						path: 'class/:id',
+						loader: ({params})=>{
+							return fetch(`http://localhost:5000/all?id=${params?.id}`)
+						},
+						element: <Class></Class>
 					}
 				]
 			},
@@ -51,11 +58,11 @@ export const router = createBrowserRouter([
 				element: <Quiz></Quiz>,
 			},	
 			{
-				path: "/addquiz",
+				path: "/addquiz/:courseID",
 				element: <AddQuiz></AddQuiz>,
 			},
 			{
-				path: "/addtask",
+				path: "/addtask/:courseID",
 				element: <Addtask></Addtask>
 			},	
 			{
@@ -64,6 +71,9 @@ export const router = createBrowserRouter([
 			},	
 			{
 				path: "/class",
+				loader: ()=> {
+					return fetch('http://localhost:5000/classes')
+				},
 				element: <Classes></Classes>
 			},		
 		],
