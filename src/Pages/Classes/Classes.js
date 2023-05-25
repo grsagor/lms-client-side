@@ -17,7 +17,9 @@ const Classes = () => {
                 <h3>Nusrat Nova</h3>
                 <h2>Student</h2>
             </div>
+            <div className=''>
             <hr className='w-20px' />
+            </div>
 
             <div className='classes'>
             {

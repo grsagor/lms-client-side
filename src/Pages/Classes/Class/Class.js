@@ -49,6 +49,13 @@ const Class = () => {
     };
     return (
         <div>
+          <div className='course-details'>
+            <p className='text-3xl font-bold'>Course:<h1>{course?.title}</h1></p>
+            <p className='text-xl'>Code:</p>
+            <button><Link to='/folders'>Folders</Link></button>
+          </div>
+          <hr className='w-full mb-3' />
+          
             <form onSubmit={handleSubmit(handlePost)}>
                 <div className='create-post'>
                     <div className='write-post gap-3 '>
@@ -79,7 +86,6 @@ const Class = () => {
                     </div>
                 </div>
             </form>
-            <h1>{course?.title}</h1>
             <Post posts={posts}></Post>
         </div>
     );

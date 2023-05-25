@@ -11,6 +11,7 @@ import Addtask from "../Shared/Posts/Tasks/Addtask";
 import SubmitTask from "../Shared/Posts/Tasks/SubmitTask";
 import Class from "../Pages/Classes/Class/Class";
 import Classes from "../Pages/Classes/Classes";
+import Folders from "../Pages/Classes/Class/Folders";
 
 export const router = createBrowserRouter([
 	{
@@ -68,6 +69,10 @@ export const router = createBrowserRouter([
 			{
 				path: "/submittask",
 				element: <SubmitTask></SubmitTask>
+			},	
+			{
+				path: "/folders",
+				element: <Folders></Folders>
 			},	
 			{
 				path: "/class",
