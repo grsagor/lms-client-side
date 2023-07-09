@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import NormalPost from '../PostTypes/NormalPost';
 import QuizPost from '../PostTypes/QuizPost';
 import AssignmentPost from '../PostTypes/AssignmentPost';
+import { AuthContext } from '../../../Context/AuthProvider';
+import { useQuery } from 'react-query';
 
-const Post = ({posts}) => {
+const Post = () => {
+    const {user} = useContext(AuthContext);
+    const { data: userInfo = [], refetch } = useQuery({
+        queryKey: ['postuser'],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/users?email=${user?.email}`);
+            const data = await res.json();
+            return data;
+        }
+    });
+    useEffect(()=>{
+        refetch()
+    },[user]);
+    const posts = userInfo[0]?.posts[0];
+    console.log(posts)
     return (
         <div>
             {
