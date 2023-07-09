@@ -19,7 +19,6 @@ const Post = () => {
         refetch()
     },[user]);
     const posts = userInfo[0]?.posts[0];
-    console.log(posts)
     return (
         <div>
             {
