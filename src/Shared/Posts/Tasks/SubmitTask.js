@@ -19,7 +19,7 @@ const SubmitTask = () => {
         const { files } = data;
 
         const formData = new FormData();
-        formData.append('student', user?.email);
+        formData.append('studentEmail', user?.email);
         formData.append('courseID', post?.courseID);
         for (let i = 0; i < files.length; i++) {
             formData.append('photos', files[i]);
