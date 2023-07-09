@@ -20,9 +20,6 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: "/",
-				loader: ()=> {
-					return fetch('http://localhost:5000/classes')
-				},
 				element: <Home></Home>,
 				children: [
 					{
@@ -67,7 +64,10 @@ export const router = createBrowserRouter([
 				element: <Addtask></Addtask>
 			},	
 			{
-				path: "/submittask",
+				path: "/submittask/:id",
+				loader: ({params})=>{
+					return fetch(`http://localhost:5000/posts?id=${params?.id}`)
+				},
 				element: <SubmitTask></SubmitTask>
 			},	
 			{
