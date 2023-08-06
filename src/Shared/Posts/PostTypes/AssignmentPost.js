@@ -32,7 +32,6 @@ const AssignmentPost = ({post}) => {
                     {
                         post?.files.map(file => <><img src={`http://localhost:5000/uploads/${file?.filename}`} className='photo' /></>)
                     }
-                    {/* <img src={img3} className='photo' /> */}
                 </div>
                 <div>
                     <Link to={`/submittask/${post?._id}`}><button>Submit Your Answer</button></Link>

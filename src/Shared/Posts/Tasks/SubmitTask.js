@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { WiDirectionRight } from "react-icons/wi";
 import { GrAttachment } from "react-icons/gr";
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider';
 import { toast } from 'react-hot-toast';
@@ -10,6 +10,8 @@ import { toast } from 'react-hot-toast';
 
 
 const SubmitTask = () => {
+    const { id } = useParams();
+    console.log(id)
     const post = useLoaderData()[0];
     const { user } = useContext(AuthContext);
     console.log(post);
@@ -21,6 +23,7 @@ const SubmitTask = () => {
         const formData = new FormData();
         formData.append('studentEmail', user?.email);
         formData.append('courseID', post?.courseID);
+        formData.append('postID', id);
         for (let i = 0; i < files.length; i++) {
             formData.append('photos', files[i]);
         }
@@ -54,7 +57,7 @@ const SubmitTask = () => {
                     <div className='option-design p-3'>
                         <GrAttachment></GrAttachment>
                         <label for='file'><span>Attached file</span></label>
-                        <input {...register("files")} type='file' id='file' className='inputfile' />
+                        <input {...register("files")} type='file' id='file' className='inputfile' required/>
                         <input type="submit" value="Submit Answer" />
                     </div>
                 </form>
